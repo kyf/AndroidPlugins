@@ -2,7 +2,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-version = "1.0.1"
+version = "1.0.0"
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
@@ -31,9 +32,10 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
 }
 
+
 def siteUrl = 'https://github.com/kyf/AndroidPlugins'
 def gitUrl = 'https://github.com/kyf/AndroidPlugins.git'
-group = "com.kyf.mytoast"
+group = "com.kyf.myutil"
 install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
@@ -41,7 +43,7 @@ install {
             project {
                 packaging 'aar'
                 // Add your description here
-                name 'Android Commonly Toast'  //项目描述
+                name 'Android Commonly Util'  //项目描述
                 url siteUrl
                 // Set your license
                 licenses {
@@ -90,7 +92,7 @@ bintray {
     configurations = ['archives']
     pkg {
         repo = "maven"  //发布到Bintray的那个仓库里，默认账户有四个库，我们这里上传到maven库
-        name = "mytoast"  //发布到Bintray上的项目名字
+        name = "myutil"  //发布到Bintray上的项目名字
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
